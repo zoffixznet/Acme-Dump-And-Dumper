@@ -108,7 +108,8 @@ object's class. B<See caveats section below>.
 
 Whenever possible, the module will try to deep clone the structure
 before messing with it and dumping it. B<However>, since not everything
-is deep clonable, it fails to deep clone, the module will modify the original data structure, and method call on what B<used to be> objects
+is deep clonable, if the deep clone fails, the module will modify the
+original data structure, and method call on what B<used to be> objects
 will obviously fail.
 
 =head1 HISTORY
