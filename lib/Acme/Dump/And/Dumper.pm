@@ -130,7 +130,7 @@ P.S.: eventually I ended up using L<Data::Rmap> instead of the Freezer.
 =begin html
 
 <img src="http://zoffix.com/CPAN/Acme-Dump-and-Dumper.jpg"
-    style="border: 2px solid #aaa!important; display: block!important; margin: 20px auto!important;"
+    style="border: 2px solid #aaa!important; display: block!important; margin: 20px 0!important;"
     alt="Dumb and Dumber">
 
 =end html
