@@ -63,7 +63,8 @@ object's class. __See caveats section below__.
 
 Whenever possible, the module will try to deep clone the structure
 before messing with it and dumping it. __However__, since not everything
-is deep clonable, it fails to deep clone, the module will modify the original data structure, and method call on what __used to be__ objects
+is deep clonable, if the deep clone fails, the module will modify the
+original data structure, and method call on what __used to be__ objects
 will obviously fail.
 
 # HISTORY
@@ -83,7 +84,7 @@ use, when I don't want to see any object guts.
 P.S.: eventually I ended up using [Data::Rmap](https://metacpan.org/pod/Data::Rmap) instead of the Freezer.
 
 <img src="http://zoffix.com/CPAN/Acme-Dump-and-Dumper.jpg"
-    style="border: 2px solid \#aaa!important; display: block!important; margin: 20px auto!important;"
+    style="border: 2px solid \#aaa!important; display: block!important; margin: 20px 0!important;"
     alt="Dumb and Dumber">
 
 # REPOSITORY
