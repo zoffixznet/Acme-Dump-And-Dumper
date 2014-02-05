@@ -26,7 +26,7 @@ sub DnD {
             unless defined $working_data;
 
         rmap_all {
-            defined blessed $_ and $_ = 'obj[' . ref . ']'
+            defined blessed $_ and $_ = 'obj[' . ref($_) . ']'
         } $working_data;
 
         push @out, Dumper $working_data;
