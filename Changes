@@ -1,5 +1,8 @@
 Revision history for Acme-Dump-And-Dumper
 
+1.001004  2014-02-05
+    - Fixed issue #9 ('ambiguous use' warnings from ref())
+
 1.001003  2014-01-30
     - Fixed up broken tests
 
