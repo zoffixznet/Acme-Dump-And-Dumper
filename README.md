@@ -57,14 +57,14 @@ this module provides `DnD()` function (pneumonic: "Dump'n'Dumper").
 Takes the same stuff and returns the same output as
 `Data::Dumper::Dumper()`, except all of the
 objects will be replaced with `obj[Foo::Bar]`, where `Foo::Bar` is
-object's class. __See caveats section below__.
+object's class. **See caveats section below**.
 
 # CAVEATS
 
 Whenever possible, the module will try to deep clone the structure
-before messing with it and dumping it. __However__, since not everything
+before messing with it and dumping it. **However**, since not everything
 is deep clonable, if the deep clone fails, the module will modify the
-original data structure, and method call on what __used to be__ objects
+original data structure, and method call on what **used to be** objects
 will obviously fail.
 
 # HISTORY
@@ -83,9 +83,11 @@ use, when I don't want to see any object guts.
 
 P.S.: eventually I ended up using [Data::Rmap](https://metacpan.org/pod/Data::Rmap) instead of the Freezer.
 
-<img src="http://zoffix.com/CPAN/Acme-Dump-and-Dumper.jpg"
-    style="border: 2px solid \#aaa!important; display: block!important; margin: 20px 0!important;"
-    alt="Dumb and Dumber">
+<div>
+    <img src="http://zoffix.com/CPAN/Acme-Dump-and-Dumper.jpg"
+        style="border: 2px solid #aaa!important; display: block!important; margin: 20px 0!important;"
+        alt="Dumb and Dumber">
+</div>
 
 # REPOSITORY
 
