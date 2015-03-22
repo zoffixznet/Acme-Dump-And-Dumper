@@ -11,7 +11,7 @@ our @EXPORT_OK = @Data::Dumper::EXPORT_OK;
 our @EXPORT    = ( 'DnD', @Data::Dumper::EXPORT );
 
 use Data::Rmap;
-use Scalar::Util qw/blessed/;
+use Scalar::Util qw/blessed  refaddr/;
 use Data::Dumper ( @Data::Dumper::EXPORT, @Data::Dumper::EXPORT_OK, );
 use Storable qw/dclone/;
 $Storable::Deparse = 1;
@@ -26,7 +26,11 @@ sub DnD {
             unless defined $working_data;
 
         rmap_all {
-            defined blessed $_ and $_ = 'obj[' . ref($_) . ']'
+            my $state = shift;
+            if ( defined blessed $_) {
+                delete $state->seen->{ refaddr $_ };
+                $_ = 'obj[' . ref($_) . ']';
+            }
         } $working_data;
 
         push @out, Dumper $working_data;

@@ -1,5 +1,9 @@
 Revision history for Acme-Dump-And-Dumper
 
+1.001005  2015-03-21
+    - Fixed issues where objects that are referenced more
+        than once weren't roperly processed (Issue #2)
+
 1.001004  2014-02-05
     - Fixed issue #9 ('ambiguous use' warnings from ref())
 

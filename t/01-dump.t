@@ -8,16 +8,21 @@ plan tests => 1;
 
 use Acme::Dump::And::Dumper;
 
+my $obj = bless([qw/x y z/], 'Foo::Bar');
+
 my $data_orig = {
     ber => {
-        obj  => bless([qw/x y z/], 'Foo::Bar'),
+        obj  => [ $obj, $obj ],
     },
 };
 
 my $output_DnD = <<'END';
 $VAR1 = {
           'ber' => {
-                     'obj' => 'obj[Foo::Bar]'
+                     'obj' => [
+                                'obj[Foo::Bar]',
+                                'obj[Foo::Bar]'
+                              ]
                    }
         };
 END
